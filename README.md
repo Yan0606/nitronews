@@ -229,14 +229,6 @@ NitroNews/
 2. Implante a pasta `build` no seu serviço de hospedagem
 3. Atualize a URL base da API em `src/services/api.ts` se necessário
 
-## 🤝 Contribuindo
-
-1. Bifurque o repositório
-2. Crie uma branch de funcionalidade
-3. Faça suas alterações
-4. Teste exaustivamente
-5. Envie um pull request
-
 ## 📝 Licença
 
 Este projeto foi criado para fins educacionais como parte de um desafio técnico.
@@ -246,11 +238,3 @@ Este projeto foi criado para fins educacionais como parte de um desafio técnico
 - Aviso de versão do Node.js (funciona bem com Node 18+)
 - Alguns avisos de auditoria do NPM (não críticos)
 
-## 🔮 Melhorias futuras
-
-- Atualizações em tempo real com WebSockets
-- Upload de imagens para postagens
-- Perfis de usuários e sistema de seguidores
-- Curtidas e comentários em postagens
-- Funcionalidade de busca avançada
-- Aplicativo mobile com React Native
