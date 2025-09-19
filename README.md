@@ -1,258 +1,256 @@
+# 📝 NitroNews - Aplicativo de Microblog
 
-# 📝 NitroNews - Microblogging Application
+Um aplicativo de microblog semelhante ao Twitter, desenvolvido com Laravel (backend) e React (frontend), com autenticação de usuários, criação de postagens e visibilidade de postagens públicas/privadas.
 
-A Twitter-like microblogging application built with Laravel (backend) and React (frontend), featuring user authentication, post creation, and public/private post visibility.
+## 🚀 Recursos
 
-## 🚀 Features
+### ✅ Recursos Implementados
 
-### ✅ Implemented Features
+- **Autenticação de Usuário**
+- Registro de usuário com validação de e-mail
+- Funcionalidade de login/logout seguro
+- Requisitos de senha (8+ caracteres, caracteres especiais, números)
+- Autenticação baseada em token JWT com Laravel Sanctum
 
-- **User Authentication**
-  - User registration with email validation
-  - Secure login/logout functionality
-  - Password requirements (8+ chars, special chars, numbers)
-  - JWT token-based authentication with Laravel Sanctum
+- **Gerenciamento de Usuários**
+- Integração com Gravatar para fotos de perfil
+- Exibição de informações do perfil do usuário
 
-- **User Management**
-  - Gravatar integration for profile pictures
-  - User profile information display
+- **Sistema de Postagens**
+- Criação de postagens com limite de 280 caracteres
+- Visibilidade de postagens públicas e privadas
+- Edição e exclusão apenas das próprias postagens
+- Contador de caracteres em tempo real
+- Carimbos de data/hora das postagens com exibição de tempo relativo
 
-- **Posts System**
-  - Create posts with 280 character limit
-  - Public and private post visibility
-  - Edit and delete own posts only
-  - Real-time character counter
-  - Post timestamps with relative time display
-
-- **Security**
-  - Protected API routes
-  - User authorization for post operations
-  - XSS and SQL injection protection
-  - CORS configuration
+- **Segurança**
+- Rotas de API protegidas
+- Autorização do usuário para operações de postagem
+- Proteção contra injeção de XSS e SQL
+- Configuração de CORS
 
 - **UI/UX**
-  - Dark theme matching the provided design
-  - Responsive design
-  - Modern React components with TypeScript
-  - Tailwind CSS for styling
+- Tema escuro compatível com o design fornecido
+- Design responsivo
+- Componentes React modernos com TypeScript
+- CSS Tailwind para estilização
 
-## 🛠️ Technologies Used
+## 🛠️ Tecnologias Utilizadas
 
 ### Backend
-- **Laravel 12** - PHP framework
-- **Laravel Sanctum** - API authentication
-- **PostgreSQL** - Database (configurable)
-- **SQLite** - Default database for development
+- **Laravel 12** - Framework PHP
+- **Laravel Sanctum** - Autenticação de API
+- **PostgreSQL** - Banco de Dados (configurável)
+- **SQLite** - Banco de dados padrão para desenvolvimento
 
 ### Frontend
-- **React 18** with TypeScript
-- **React Router** - Client-side routing
-- **Axios** - HTTP client
-- **Tailwind CSS** - Utility-first CSS framework
+- **React 18** com TypeScript
+- **React Router** - Roteamento do lado do cliente
+- **Axios** - Cliente HTTP
+- **Tailwind CSS** - Framework CSS que prioriza utilitários
 
-## 📋 Prerequisites
+## 📋 Pré-requisitos
 
-- PHP 8.1 or higher
+- PHP 8.1 ou superior
 - Composer
-- Node.js 18+ and npm
-- PostgreSQL (optional, SQLite works for development)
+- Node.js 18+ e npm
+- PostgreSQL (opcional, SQLite funciona para desenvolvimento)
 
-## 🚀 Installation & Setup
+## 🚀 Instalação e Configuração
 
-### Quick Start (Recommended)
+### Início Rápido (Recomendado)
 
-1. **Clone and navigate to the project:**
-   ```bash
-   git clone <repository-url>
-   cd NitroNews
-   ```
-
-2. **Run the development environment:**
-   ```bash
-   # Windows
-   start-dev.bat
-   
-   # Linux/Mac
-   chmod +x start-dev.sh
-   ./start-dev.sh
-   ```
-
-### Manual Setup
-
-#### Backend Setup
-
-1. **Navigate to backend directory:**
-   ```bash
-   cd backend
-   ```
-
-2. **Install PHP dependencies:**
-   ```bash
-   composer install
-   ```
-
-3. **Environment configuration:**
-   ```bash
-   cp .env.example .env
-   php artisan key:generate
-   ```
-
-4. **Database setup:**
-   ```bash
-   # For SQLite (default)
-   touch database/database.sqlite
-   
-   # Or configure PostgreSQL in .env:
-   # DB_CONNECTION=pgsql
-   # DB_HOST=127.0.0.1
-   # DB_PORT=5432
-   # DB_DATABASE=nitronews
-   # DB_USERNAME=your_username
-   # DB_PASSWORD=your_password
-   ```
-
-5. **Run migrations:**
-   ```bash
-   php artisan migrate
-   ```
-
-6. **Start the Laravel server:**
-   ```bash
-   php artisan serve
-   ```
-   The API will be available at `http://localhost:8000`
-
-#### Frontend Setup
-
-1. **Navigate to frontend directory:**
-   ```bash
-   cd frontend
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Start the development server:**
-   ```bash
-   npm start
-   ```
-   The application will be available at `http://localhost:3000`
-
-## 🔧 API Endpoints
-
-### Authentication
-- `POST /api/register` - User registration
-- `POST /api/login` - User login
-- `POST /api/logout` - User logout (requires auth)
-- `GET /api/me` - Get current user (requires auth)
-
-### Posts
-- `GET /api/posts` - Get all posts (public only for guests)
-- `POST /api/posts` - Create new post (requires auth)
-- `PUT /api/posts/{id}` - Update post (requires auth, own posts only)
-- `DELETE /api/posts/{id}` - Delete post (requires auth, own posts only)
-
-## 🧪 Test Credentials
-
-You can create a test account by registering through the application, or use these sample credentials after creating an account:
-
-```
-Email: test@example.com
-Password: Test123!@#
+1. **Clone e navegue até o projeto:**
+```bash
+git clone <url-do-repositório>
+cd NitroNews
 ```
 
-## 📁 Project Structure
+2. **Execute o desenvolvimento Ambiente:**
+```bash
+# Windows
+start-dev.bat
+
+# Linux/Mac
+chmod +x start-dev.sh
+./start-dev.sh
+```
+
+### Configuração Manual
+
+#### Configuração do Backend
+
+1. **Navegue até o diretório do backend:**
+```bash
+cd backend
+```
+
+2. **Instale as dependências do PHP:**
+```bash
+composer install
+```
+
+3. **Configuração do ambiente:**
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+
+4. **Configuração do banco de dados:**
+```bash
+# Para SQLite (padrão)
+touch database/database.sqlite
+
+# Ou configure o PostgreSQL em .env:
+# DB_CONNECTION=pgsql
+# DB_HOST=127.0.0.1
+# PORTA_BD=5432
+# BANCO_DE_DADOS_BD=nitronews
+# NOME_DE_USUÁRIO_BD=seu_nome_de_usuário
+# SENHA_BD=sua_senha
+```
+
+5. **Execute as migrações:**
+```bash
+php artisan migrate
+```
+
+6. **Inicie o servidor Laravel:**
+```bash
+php artisan serve
+```
+A API estará disponível em `http://localhost:8000`
+
+#### Configuração do Frontend
+
+1. **Navegue até o diretório do frontend:**
+```bash
+cd frontend
+```
+
+2. **Instale as dependências:**
+```bash
+npm install
+```
+
+3. **Inicie o servidor de desenvolvimento:**
+```bash
+npm start
+```
+A aplicação estará disponível em `http://localhost:3000`
+
+## 🔧 Endpoints da API
+
+### Autenticação
+- `POST /api/register` - Registro do usuário
+- `POST /api/login` - Login do usuário
+- `POST /api/logout` - Logout do usuário (requer autenticação)
+- `GET /api/me` - Obtém o usuário atual (requer autenticação)
+
+### Postagens
+- `GET /api/posts` - Obtém todas as postagens (público apenas para convidados)
+- `POST /api/posts` - Cria uma nova postagem (requer autenticação)
+- `PUT /api/posts/{id}` - Atualiza a postagem (requer autenticação, somente suas próprias postagens)
+- `DELETE /api/posts/{id}` - Exclui a postagem (requer autenticação, somente suas próprias postagens)
+
+## 🧪 Credenciais de Teste
+
+Você pode criar uma conta de teste registrando-se no aplicativo ou usar estas credenciais de exemplo após criar uma conta:
+
+```
+E-mail: test@example.com
+Senha: Test123!@#
+```
+
+## 📁 Estrutura do Projeto
 
 ```
 NitroNews/
-├── backend/                 # Laravel API
-│   ├── app/
-│   │   ├── Http/Controllers/Api/
-│   │   │   ├── AuthController.php
-│   │   │   └── PostController.php
-│   │   └── Models/
-│   │       ├── User.php
-│   │       └── Post.php
-│   ├── database/migrations/
-│   └── routes/api.php
-├── frontend/               # React Application
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── Login.tsx
-│   │   │   ├── Register.tsx
-│   │   │   ├── Header.tsx
-│   │   │   ├── PostForm.tsx
-│   │   │   ├── Post.tsx
-│   │   │   ├── Feed.tsx
-│   │   │   └── ProtectedRoute.tsx
-│   │   ├── contexts/
-│   │   │   └── AuthContext.tsx
-│   │   ├── services/
-│   │   │   └── api.ts
-│   │   ├── types/
-│   │   │   └── index.ts
-│   │   └── App.tsx
+├── backend/ # API do Laravel
+│ ├── app/
+│ │ ├── Http/Controllers/Api/
+│ │ │ ├── AuthController.php
+│ │ │ └── PostController.php
+│ │ └── Models/
+│ │ ├── User.php
+│ │ └── Post.php
+│ ├── banco de dados/migrações/
+│ └── rotas/api.php
+├── frontend/ # Aplicativo React
+│ ├── src/
+│ │ ├── componentes/
+│ │ │ ├── Login.tsx
+│ │ │ ├── Register.tsx
+│ │ │ ├── Header.tsx
+│ │ │ ├── PostForm.tsx
+│ │ │ ├── Post.tsx
+│ │ │ ├── Feed.tsx
+│ │ │ └── ProtectedRoute.tsx
+│ │ ├── contexts/
+│ │ │ └── AuthContext.tsx
+│ │ ├── services/
+│ │ │ └── api.ts
+│ │ ├── types/
+│ │ │ └── index.ts
+│ │ └── App.tsx
 └── README.md
 ```
 
-## 🔒 Security Features
+## 🔒 Recursos de Segurança
 
-- **Password Validation**: Minimum 8 characters with special characters and numbers
-- **Email Validation**: Proper email format validation
-- **Route Protection**: API routes protected with Laravel Sanctum
-- **Authorization**: Users can only edit/delete their own posts
-- **CORS Configuration**: Properly configured for frontend-backend communication
-- **XSS Protection**: Laravel's built-in XSS protection
-- **SQL Injection Protection**: Eloquent ORM prevents SQL injection
+- **Validação de Senha**: Mínimo de 8 caracteres com caracteres especiais e números
+- **Validação de E-mail**: Validação correta do formato de e-mail
+- **Proteção de Rota**: Rotas de API protegidas com o Laravel Sanctum
+- **Autorização**: Usuários podem editar/excluir apenas suas próprias postagens
+- **Configuração CORS**: Configurado corretamente para comunicação front-end-back-end
+- **Proteção XSS**: Proteção XSS integrada do Laravel
+- **Proteção contra Injeção de SQL**: O Eloquent ORM impede injeção de SQL
 
-## 🎨 Design Features
+## 🎨 Recursos de Design
 
-- **Dark Theme**: Matches the provided Figma design
-- **Responsive Layout**: Works on desktop and mobile devices
-- **Modern UI**: Clean, Twitter-like interface
-- **Gravatar Integration**: Automatic profile pictures
-- **Real-time Updates**: Character counter and form validation
-- **Loading States**: Proper loading indicators for better UX
+- **Tema Escuro**: Combina com o design do Figma
+- **Layout Responsivo**: Funciona em desktops e dispositivos móveis
+- **IU Moderna**: Interface limpa, semelhante à do Twitter
+- **Integração com o Gravatar**: Fotos de perfil automáticas
+- **Atualizações em Tempo Real**: Contador de Caracteres e Validação de Formulários
+- **Estados de Carregamento**: Indicadores de Carregamento Adequados para uma Melhor Experiência do Usuário
 
-## 🚀 Deployment
+## 🚀 Implantação
 
-### Backend Deployment
-1. Configure production database in `.env`
-2. Set `APP_ENV=production` and `APP_DEBUG=false`
-3. Run `php artisan config:cache`
-4. Run `php artisan route:cache`
-5. Deploy to your preferred hosting service
+### Implantação de Backend
+1. Configure o banco de dados de produção em `.env`
+2. Defina `APP_ENV=production` e `APP_DEBUG=false`
+3. Execute `php artisan config:cache`
+4. Execute `php artisan route:cache`
+5. Implante no seu serviço de hospedagem preferido
 
-### Frontend Deployment
-1. Build the production version: `npm run build`
-2. Deploy the `build` folder to your hosting service
-3. Update API base URL in `src/services/api.ts` if needed
+### Implantação de Frontend
+1. Compile a versão de produção: `npm run build`
+2. Implante a pasta `build` no seu serviço de hospedagem
+3. Atualize a URL base da API em `src/services/api.ts` se necessário
 
-## 🤝 Contributing
+## 🤝 Contribuindo
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
+1. Bifurque o repositório
+2. Crie uma branch de funcionalidade
+3. Faça suas alterações
+4. Teste exaustivamente
+5. Envie um pull request
 
-## 📝 License
+## 📝 Licença
 
-This project is created for educational purposes as part of a technical challenge.
+Este projeto foi criado para fins educacionais como parte de um desafio técnico.
 
-## 🐛 Known Issues
+## 🐛 Problemas conhecidos
 
-- Node.js version warning (works fine with Node 18+)
-- Some npm audit warnings (non-critical)
+- Aviso de versão do Node.js (funciona bem com Node 18+)
+- Alguns avisos de auditoria do NPM (não críticos)
 
-## 🔮 Future Enhancements
+## 🔮 Melhorias futuras
 
-- Real-time updates with WebSockets
-- Image upload for posts
-- User profiles and following system
-- Post likes and comments
-- Advanced search functionality
-- Mobile app with React Native
-#
+- Atualizações em tempo real com WebSockets
+- Upload de imagens para postagens
+- Perfis de usuários e sistema de seguidores
+- Curtidas e comentários em postagens
+- Funcionalidade de busca avançada
+- Aplicativo mobile com React Native
